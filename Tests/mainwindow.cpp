@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui_main->setupUi(this);
 
-
-    connect(ui_main->actionLoad,SIGNAL(triggered()),SLOT(ActionOneSlot()));
+    // Toolbar
+    connect(ui_main->actionQuit,SIGNAL(triggered()),SLOT(ActionOneSlot()));
 
 
     hierarchy = new Hierarchy();
@@ -45,8 +45,8 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::ActionOneSlot() {
     QMessageBox::StandardButton button = QMessageBox::question(
                 this,
-                "Exit",
-                "Suck my ****"
+                "Exit",                             //Message Box Title
+                "Are you sure you want to Quit?"    //Message Box Text
     );
     if (button == QMessageBox::Yes)
     {

@@ -944,7 +944,7 @@
      <x>0</x>
      <y>0</y>
      <width>895</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCreate">
@@ -952,15 +952,10 @@
      <string>File</string>
     </property>
     <addaction name="actionQuit"/>
-   </widget>
-   <widget class="QMenu" name="menuLoad">
-    <property name="title">
-     <string>Load</string>
-    </property>
+    <addaction name="actionSave"/>
     <addaction name="actionLoad"/>
    </widget>
    <addaction name="menuCreate"/>
-   <addaction name="menuLoad"/>
   </widget>
   <action name="actionQuit">
    <property name="icon">
@@ -969,6 +964,11 @@
    </property>
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
    </property>
   </action>
   <action name="actionLoad">
