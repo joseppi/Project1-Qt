@@ -17,10 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui_main(new Ui::MainWindow)
 {
-
-
     ui_main->setupUi(this);
-
 
     connect(ui_main->actionLoad,SIGNAL(triggered()),SLOT(ActionOneSlot()));
 
@@ -31,9 +28,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui_main->dockBase->setWidget(hierarchy);
     ui_main->dockInspector->setWidget(inspector);
-
-
-    //connect((hierarchy),SIGNAL())
 
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(scene_view);
