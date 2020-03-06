@@ -20,7 +20,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui_main->setupUi(this);
 
     // Toolbar
-    connect(ui_main->actionQuit,SIGNAL(triggered()),SLOT(ActionOneSlot()));
+    connect(ui_main->actionQuit,SIGNAL(triggered()),SLOT(ActionQuit()));
+    connect(ui_main->actionLoad,SIGNAL(triggered()),SLOT(ActionLoad()));
+    connect(ui_main->actionSave,SIGNAL(triggered()),SLOT(ActionSave()));
+
 
 
     hierarchy = new Hierarchy();
@@ -37,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-void MainWindow::ActionOneSlot() {
+void MainWindow::ActionQuit() {
     QMessageBox::StandardButton button = QMessageBox::question(
                 this,
                 "Exit",                             //Message Box Title
@@ -46,6 +49,24 @@ void MainWindow::ActionOneSlot() {
     if (button == QMessageBox::Yes)
     {
         qApp->exit();
+    }
+
+}
+
+void MainWindow::ActionLoad() {
+    QString path = QFileDialog::getOpenFileName(this, "Open Project");
+    if (!path.isEmpty())
+    {
+       QMessageBox::information(this, "Info Load", path);
+    }
+
+}
+
+void MainWindow::ActionSave() {
+    QString path = QFileDialog::getOpenFileName(this, "Open Project");
+    if (!path.isEmpty())
+    {
+       QMessageBox::information(this, "Info Save", path);
     }
 
 }
