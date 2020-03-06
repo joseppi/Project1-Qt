@@ -51,7 +51,10 @@ SOURCES       = ..\Tests\hierarchy.cpp \
 		..\Tests\inspector.cpp \
 		..\Tests\main.cpp \
 		..\Tests\mainwindow.cpp \
-		..\Tests\sceneview.cpp debug\qrc_icons.cpp \
+		..\Tests\rectangle.cpp \
+		..\Tests\sceneview.cpp \
+		..\Tests\shape.cpp \
+		..\Tests\shapefactory.cpp debug\qrc_icons.cpp \
 		debug\moc_hierarchy.cpp \
 		debug\moc_inspector.cpp \
 		debug\moc_mainwindow.cpp \
@@ -60,7 +63,10 @@ OBJECTS       = debug\hierarchy.obj \
 		debug\inspector.obj \
 		debug\main.obj \
 		debug\mainwindow.obj \
+		debug\rectangle.obj \
 		debug\sceneview.obj \
+		debug\shape.obj \
+		debug\shapefactory.obj \
 		debug\qrc_icons.obj \
 		debug\moc_hierarchy.obj \
 		debug\moc_inspector.obj \
@@ -70,11 +76,17 @@ OBJECTS       = debug\hierarchy.obj \
 DIST          =  ..\Tests\hierarchy.h \
 		..\Tests\inspector.h \
 		..\Tests\mainwindow.h \
-		..\Tests\sceneview.h ..\Tests\hierarchy.cpp \
+		..\Tests\rectangle.h \
+		..\Tests\sceneview.h \
+		..\Tests\shape.h \
+		..\Tests\shapefactory.h ..\Tests\hierarchy.cpp \
 		..\Tests\inspector.cpp \
 		..\Tests\main.cpp \
 		..\Tests\mainwindow.cpp \
-		..\Tests\sceneview.cpp
+		..\Tests\rectangle.cpp \
+		..\Tests\sceneview.cpp \
+		..\Tests\shape.cpp \
+		..\Tests\shapefactory.cpp
 QMAKE_TARGET  = Tests
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = Tests.exe
@@ -151,7 +163,7 @@ all: Makefile.Debug  debug\Tests.exe
 
 debug\Tests.exe: ui_hierarchy.h ui_mainwindow.h ui_mesh.h ui_transform.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-debug\hierarchy.obj debug\inspector.obj debug\main.obj debug\mainwindow.obj debug\sceneview.obj debug\qrc_icons.obj debug\moc_hierarchy.obj debug\moc_inspector.obj debug\moc_mainwindow.obj debug\moc_sceneview.obj
+debug\hierarchy.obj debug\inspector.obj debug\main.obj debug\mainwindow.obj debug\rectangle.obj debug\sceneview.obj debug\shape.obj debug\shapefactory.obj debug\qrc_icons.obj debug\moc_hierarchy.obj debug\moc_inspector.obj debug\moc_mainwindow.obj debug\moc_sceneview.obj
 $(LIBS)
 <<
 
@@ -161,10 +173,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Tests.zip $(SOURCES) $(DIST) ..\Tests\Tests.pro C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\spec_pre.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\angle.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\windows-vulkan.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\msvc-desktop.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\qconfig.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_functions.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_config.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\msvc-version.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\toolchain.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\default_pre.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\win32\default_pre.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\resolve_config.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\default_post.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\build_pass.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qml_debug.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\precompile_header.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\warn_on.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\resources.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\moc.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\win32\opengl.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\uic.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qmake_use.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\file_copies.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\win32\windows.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\testcase_targets.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exceptions.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\yacc.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\lex.prf ..\Tests\Tests.pro ..\Tests\icons.qrc C:\soft\Qt\5.12.2\msvc2017_64\lib\Qt5Widgetsd.prl C:\soft\Qt\5.12.2\msvc2017_64\lib\Qt5Guid.prl C:\soft\Qt\5.12.2\msvc2017_64\lib\Qt5Cored.prl C:\soft\Qt\5.12.2\msvc2017_64\lib\qtmaind.prl   ..\Tests\icons.qrc C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\data\dummy.cpp ..\Tests\hierarchy.h ..\Tests\inspector.h ..\Tests\mainwindow.h ..\Tests\sceneview.h  ..\Tests\hierarchy.cpp ..\Tests\inspector.cpp ..\Tests\main.cpp ..\Tests\mainwindow.cpp ..\Tests\sceneview.cpp ..\Tests\hierarchy.ui ..\Tests\mainwindow.ui ..\Tests\mesh.ui ..\Tests\transform.ui    
+	$(ZIP) Tests.zip $(SOURCES) $(DIST) ..\Tests\Tests.pro C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\spec_pre.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\angle.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\windows-vulkan.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\msvc-desktop.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\qconfig.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_functions.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_config.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\msvc-version.conf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\toolchain.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\default_pre.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\win32\default_pre.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\resolve_config.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\default_post.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\build_pass.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qml_debug.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\precompile_header.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\warn_on.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\resources.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\moc.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\win32\opengl.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\uic.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qmake_use.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\file_copies.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\win32\windows.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\testcase_targets.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exceptions.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\yacc.prf C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\lex.prf ..\Tests\Tests.pro ..\Tests\icons.qrc C:\soft\Qt\5.12.2\msvc2017_64\lib\Qt5Widgetsd.prl C:\soft\Qt\5.12.2\msvc2017_64\lib\Qt5Guid.prl C:\soft\Qt\5.12.2\msvc2017_64\lib\Qt5Cored.prl C:\soft\Qt\5.12.2\msvc2017_64\lib\qtmaind.prl   ..\Tests\icons.qrc C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\data\dummy.cpp ..\Tests\hierarchy.h ..\Tests\inspector.h ..\Tests\mainwindow.h ..\Tests\rectangle.h ..\Tests\sceneview.h ..\Tests\shape.h ..\Tests\shapefactory.h  ..\Tests\hierarchy.cpp ..\Tests\inspector.cpp ..\Tests\main.cpp ..\Tests\mainwindow.cpp ..\Tests\rectangle.cpp ..\Tests\sceneview.cpp ..\Tests\shape.cpp ..\Tests\shapefactory.cpp ..\Tests\hierarchy.ui ..\Tests\mainwindow.ui ..\Tests\mesh.ui ..\Tests\transform.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\hierarchy.obj debug\inspector.obj debug\main.obj debug\mainwindow.obj debug\sceneview.obj debug\qrc_icons.obj debug\moc_hierarchy.obj debug\moc_inspector.obj debug\moc_mainwindow.obj debug\moc_sceneview.obj
+	-$(DEL_FILE) debug\hierarchy.obj debug\inspector.obj debug\main.obj debug\mainwindow.obj debug\rectangle.obj debug\sceneview.obj debug\shape.obj debug\shapefactory.obj debug\qrc_icons.obj debug\moc_hierarchy.obj debug\moc_inspector.obj debug\moc_mainwindow.obj debug\moc_sceneview.obj
 	-$(DEL_FILE) debug\Tests.exp debug\Tests.vc.pdb debug\Tests.ilk debug\Tests.idb
 
 distclean: clean 
@@ -998,7 +1010,43 @@ debug\hierarchy.obj: ..\Tests\hierarchy.cpp ..\Tests\hierarchy.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
-		ui_hierarchy.h
+		ui_hierarchy.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QListWidget \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlistwidget.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlistview.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qicon.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h
 
 debug\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -1105,7 +1153,41 @@ debug\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		ui_transform.h \
-		ui_mesh.h
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QDoubleSpinBox \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qspinbox.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		ui_mesh.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QComboBox \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qcombobox.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qicon.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QHBoxLayout
 
 debug\main.obj: ..\Tests\main.cpp ..\Tests\mainwindow.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMainWindow \
@@ -1691,9 +1773,19 @@ debug\mainwindow.obj: ..\Tests\mainwindow.cpp C:\soft\Qt\5.12.2\msvc2017_64\incl
 		..\Tests\mainwindow.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMainWindow \
 		ui_mainwindow.h \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QAction \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QDockWidget \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMenuBar \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QStatusBar \
+		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QToolBar \
 		..\Tests\hierarchy.h \
 		..\Tests\inspector.h \
 		..\Tests\sceneview.h
+
+debug\rectangle.obj: ..\Tests\rectangle.cpp ..\Tests\rectangle.h \
+		..\Tests\shape.h
 
 debug\sceneview.obj: ..\Tests\sceneview.cpp ..\Tests\sceneview.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -1803,6 +1895,12 @@ debug\sceneview.obj: ..\Tests\sceneview.cpp ..\Tests\sceneview.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
 		C:\soft\Qt\5.12.2\msvc2017_64\include\QtGui\qpen.h
+
+debug\shape.obj: ..\Tests\shape.cpp ..\Tests\shape.h
+
+debug\shapefactory.obj: ..\Tests\shapefactory.cpp ..\Tests\shapefactory.h \
+		..\Tests\shape.h \
+		..\Tests\rectangle.h
 
 debug\qrc_icons.obj: debug\qrc_icons.cpp 
 

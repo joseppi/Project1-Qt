@@ -220,6 +220,7 @@ Makefile: ..\Tests\Tests.pro C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\win32-msvc\qm
 		C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_config.prf \
 		C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf \
 		C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds.prf \
 		C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\msvc-version.conf \
 		C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\toolchain.prf \
@@ -392,6 +393,7 @@ C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_functions.prf:
 C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\qt_config.prf:
 C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf:
 C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\spec_post.prf:
+.qmake.stash:
 C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds.prf:
 C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\common\msvc-version.conf:
 C:\soft\Qt\5.12.2\msvc2017_64\mkspecs\features\toolchain.prf:
