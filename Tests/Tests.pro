@@ -29,13 +29,19 @@ SOURCES += \
         inspector.cpp \
         main.cpp \
         mainwindow.cpp \
-        sceneview.cpp
+        rectangle.cpp \
+        sceneview.cpp \
+        shape.cpp \
+        shapefactory.cpp
 
 HEADERS += \
         hierarchy.h \
         inspector.h \
         mainwindow.h \
-        sceneview.h
+        rectangle.h \
+        sceneview.h \
+        shape.h \
+        shapefactory.h
 
 FORMS += \
         hierarchy.ui \
