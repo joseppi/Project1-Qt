@@ -28,9 +28,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-    hierarchy = new Hierarchy();
+    hierarchy = new Hierarchy(nullptr,this);
     inspector = new Inspector();
-    scene_view = new SceneView();
+    scene_view = new SceneView(nullptr,this);
 
 
     ui_main->dockBase->setWidget(hierarchy);
@@ -39,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Shape management
     shape_factory = new ShapeFactory();
+
+
 
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(scene_view);
@@ -70,12 +72,12 @@ void MainWindow::ActionLoad() {
 }
 
 void MainWindow::ActionSave() {
+
     QString path = QFileDialog::getOpenFileName(this, "Open Project");
     if (!path.isEmpty())
     {
        QMessageBox::information(this, "Info Save", path);
     }
-
 }
 
 
@@ -86,7 +88,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::AddShape()
 {
-    Shape* new_shape = shape_factory->CreateShape(RECTANGLE);
-
-
+    shape_factory->CreateShape(RECTANGLE);
 }

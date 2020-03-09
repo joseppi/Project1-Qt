@@ -17,7 +17,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    ShapeFactory* shape_factory;
+    ShapeFactory* shape_factory = nullptr;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

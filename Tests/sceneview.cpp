@@ -1,13 +1,15 @@
     #include "sceneview.h"
 #include <QPainter>
 #include "shapefactory.h"
+#include "mainwindow.h"
 
-SceneView::SceneView(QWidget *parent) : QWidget(parent)
+SceneView::SceneView(QWidget *parent, MainWindow* main_window) : QWidget(parent)
 {
-
+    this->main_window = main_window;
 }
 
-void SceneView::paintEvent(QPaintEvent*) {
+void SceneView::DrawBigCircle()
+{
     QColor blueColor = QColor::fromRgb(127,190,220);
     QColor whiteColor = QColor::fromRgb(255,255,255);
     QColor blackColor = QColor::fromRgb(0,0,0);
@@ -41,5 +43,27 @@ void SceneView::paintEvent(QPaintEvent*) {
     int y = rect().height() /2 - r;
     QRect circleRect(x,y,w,h);
     painter.drawEllipse(circleRect);
+}
+
+void SceneView::paintEvent(QPaintEvent*) {
+
+    QPainter painter(this);
+    QColor blueColor = QColor::fromRgb(127,190,220);
+    QColor whiteColor = QColor::fromRgb(255,255,255);
+    QColor blackColor = QColor::fromRgb(0,0,0);
+    QBrush brush;
+    QPen pen;
+
+    brush.setColor((blueColor));
+    brush.setStyle(Qt::BrushStyle::SolidPattern);
+    pen.setStyle(Qt::PenStyle::NoPen);
+    painter.setPen(pen);
+    painter.setBrush(brush);
+
+    painter.drawRect(rect());
+
+    //QRect rect = QRect(0,0,100,100);
+
+    main_window->shape_factory->DrawShapeList(painter,brush,pen,rect());
 
 }
