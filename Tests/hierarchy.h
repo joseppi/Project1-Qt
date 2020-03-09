@@ -2,6 +2,7 @@
 #define HIERARCHY_H
 
 #include <QWidget>
+#include <QListWidget>
 
 namespace Ui {
 class Hierarchy;
@@ -19,6 +20,7 @@ public slots:
     void OnAddEntity();
     void OnRemoveEntity();
     void OnEntitySelected();
+    QList<QListWidgetItem*> GetListViewEntities();
 
 private:
     Ui::Hierarchy *ui;

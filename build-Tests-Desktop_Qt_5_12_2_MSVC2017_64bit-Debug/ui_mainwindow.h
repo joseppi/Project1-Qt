@@ -28,6 +28,7 @@ public:
     QAction *actionQuit;
     QAction *actionSave;
     QAction *actionLoad;
+    QAction *actionNew;
     QWidget *centralWidget;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -52,6 +53,8 @@ public:
         actionSave->setObjectName(QString::fromUtf8("actionSave"));
         actionLoad = new QAction(MainWindow);
         actionLoad->setObjectName(QString::fromUtf8("actionLoad"));
+        actionNew = new QAction(MainWindow);
+        actionNew->setObjectName(QString::fromUtf8("actionNew"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         MainWindow->setCentralWidget(centralWidget);
@@ -68,6 +71,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(dockBase->sizePolicy().hasHeightForWidth());
         dockBase->setSizePolicy(sizePolicy);
+        dockBase->setMinimumSize(QSize(300, 38));
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -232,6 +236,7 @@ public:
 
         menuBar->addAction(menuCreate->menuAction());
         menuCreate->addAction(actionQuit);
+        menuCreate->addAction(actionNew);
         menuCreate->addAction(actionSave);
         menuCreate->addAction(actionLoad);
 
@@ -246,6 +251,7 @@ public:
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", nullptr));
         actionSave->setText(QApplication::translate("MainWindow", "Save", nullptr));
         actionLoad->setText(QApplication::translate("MainWindow", "Load", nullptr));
+        actionNew->setText(QApplication::translate("MainWindow", "New", nullptr));
         menuCreate->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 

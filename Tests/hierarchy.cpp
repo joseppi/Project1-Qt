@@ -16,7 +16,7 @@ Hierarchy::~Hierarchy()
 
 void Hierarchy::OnAddEntity() {
 
-    ui->listWidget->addItem("Entity");
+    ui->listWidget->addItem("Entity1");
 }
 
 void Hierarchy::OnRemoveEntity() {
@@ -26,4 +26,17 @@ void Hierarchy::OnRemoveEntity() {
 
 void Hierarchy::OnEntitySelected() {
 
+}
+
+QList<QListWidgetItem*> Hierarchy::GetListViewEntities()
+{
+    QList<QListWidgetItem*> list;
+    int total_items = ui->listWidget->count();
+
+    for(int i = 0;i<total_items;i++)
+    {
+        QListWidgetItem *it = ui->listWidget->item(i);
+        list.push_back(it);
+    }
+    return list;
 }

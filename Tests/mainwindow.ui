@@ -30,6 +30,12 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>38</height>
+    </size>
+   </property>
    <property name="palette">
     <palette>
      <active>
@@ -952,6 +958,7 @@
      <string>File</string>
     </property>
     <addaction name="actionQuit"/>
+    <addaction name="actionNew"/>
     <addaction name="actionSave"/>
     <addaction name="actionLoad"/>
    </widget>
@@ -974,6 +981,11 @@
   <action name="actionLoad">
    <property name="text">
     <string>Load</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
    </property>
   </action>
  </widget>

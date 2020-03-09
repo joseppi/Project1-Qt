@@ -19,9 +19,10 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 public slots:
-    void ActionQuit();
-    void ActionLoad();
-    void ActionSave();
+    void ActionQuitProject();
+    void ActionLoadProject();
+    void ActionSaveProject();
+    void ActionNewProject();
 
 private:
     Ui::MainWindow *ui_main;
