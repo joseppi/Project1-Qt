@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QKeyEvent>
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void AddShape();
+    void keyPressEvent(QKeyEvent *event);
+
 public slots:
     void ActionQuitProject();
     void ActionLoadProject();

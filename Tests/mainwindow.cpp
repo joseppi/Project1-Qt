@@ -1,6 +1,4 @@
 #include <QtWidgets>
-#include <QCommandLineParser>
-
 
 #if defined(QT_PRINTSUPPORT_LIB)
 #include <QtPrintSupport/qtprintsupportglobal.h>
@@ -45,7 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
     shape_factory = new ShapeFactory();
 
 
-
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(scene_view);
 
@@ -79,12 +76,6 @@ void MainWindow::ActionLoadProject() {
 void MainWindow::ActionSaveProject() {
     QString path = QFileDialog::getOpenFileName(this, "Open Project");
     QList<QListWidgetItem*> list = hierarchy->GetListViewEntities();
-    QCommandLineParser parser;
-    parser.setApplicationDescription("Test helper");
-    parser.addHelpOption();
-    parser.addVersionOption();
-    parser.addPositionalArgument("source", QCoreApplication::translate("main", "Source file to copy."));
-    parser.addPositionalArgument("destination", QCoreApplication::translate("main", "Destination directory."));
 
     if (!path.isEmpty())
     {
@@ -94,23 +85,9 @@ void MainWindow::ActionSaveProject() {
        {
         QListWidgetItem* item = list.first();
         QMessageBox::information(this, "Item info: ", item->text());
-        QStringList str;
-        str.push_back(item->text());
-
-        // An option with a value
-        QCommandLineOption targetDirectoryOption(QStringList() << "t" << "target-directory",
-                QCoreApplication::translate("main", "Copy all source files into <directory>."),
-                QCoreApplication::translate("main", "directory"));
-        parser.addOption(targetDirectoryOption);
-
-        parser.process(str);
-
        }
 
     }
-
-
-
 }
 
 void MainWindow::ActionNewProject(){
@@ -132,4 +109,12 @@ MainWindow::~MainWindow()
 void MainWindow::AddShape()
 {
     shape_factory->CreateShape(RECTANGLE);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_S)
+    {
+        qDebug("s");
+    }
 }

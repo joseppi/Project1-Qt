@@ -10,6 +10,9 @@
     <height>601</height>
    </rect>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -32,7 +35,7 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>300</width>
+     <width>400</width>
      <height>38</height>
     </size>
    </property>
@@ -972,20 +975,32 @@
    <property name="text">
     <string>Quit</string>
    </property>
+   <property name="shortcut">
+    <string extracomment="Ctrl+Q">Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionSave">
    <property name="text">
     <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="actionLoad">
    <property name="text">
     <string>Load</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actionNew">
    <property name="text">
     <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
  </widget>

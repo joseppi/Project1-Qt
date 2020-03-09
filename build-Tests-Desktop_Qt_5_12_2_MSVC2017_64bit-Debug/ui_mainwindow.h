@@ -44,6 +44,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(895, 601);
+        MainWindow->setFocusPolicy(Qt::StrongFocus);
         actionQuit = new QAction(MainWindow);
         actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
         QIcon icon;
@@ -71,7 +72,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(dockBase->sizePolicy().hasHeightForWidth());
         dockBase->setSizePolicy(sizePolicy);
-        dockBase->setMinimumSize(QSize(300, 38));
+        dockBase->setMinimumSize(QSize(400, 38));
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -249,9 +250,21 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionQuit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Q", nullptr));
+#endif // QT_NO_SHORTCUT
         actionSave->setText(QApplication::translate("MainWindow", "Save", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionSave->setShortcut(QApplication::translate("MainWindow", "Ctrl+S", nullptr));
+#endif // QT_NO_SHORTCUT
         actionLoad->setText(QApplication::translate("MainWindow", "Load", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionLoad->setShortcut(QApplication::translate("MainWindow", "Ctrl+O", nullptr));
+#endif // QT_NO_SHORTCUT
         actionNew->setText(QApplication::translate("MainWindow", "New", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionNew->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", nullptr));
+#endif // QT_NO_SHORTCUT
         menuCreate->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
