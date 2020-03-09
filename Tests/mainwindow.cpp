@@ -14,6 +14,8 @@
 #include "hierarchy.h"
 #include "inspector.h"
 #include "sceneview.h"
+#include "shapefactory.h"
+#include "rectangle.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -30,12 +32,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-    hierarchy = new Hierarchy();
+    hierarchy = new Hierarchy(nullptr,this);
     inspector = new Inspector();
-    scene_view = new SceneView();
+    scene_view = new SceneView(nullptr,this);
+
 
     ui_main->dockBase->setWidget(hierarchy);
     ui_main->dockInspector->setWidget(inspector);
+
+
+    //Shape management
+    shape_factory = new ShapeFactory();
+
+
 
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(scene_view);
@@ -65,6 +74,7 @@ void MainWindow::ActionLoadProject() {
     }
 
 }
+
 
 void MainWindow::ActionSaveProject() {
     QString path = QFileDialog::getOpenFileName(this, "Open Project");
@@ -100,6 +110,7 @@ void MainWindow::ActionSaveProject() {
     }
 
 
+
 }
 
 void MainWindow::ActionNewProject(){
@@ -109,10 +120,16 @@ void MainWindow::ActionNewProject(){
     {
        QMessageBox::information(this, "Info Load", path);
     }
+
 }
 
 
 MainWindow::~MainWindow()
 {
     delete ui_main;
+}
+
+void MainWindow::AddShape()
+{
+    shape_factory->CreateShape(RECTANGLE);
 }

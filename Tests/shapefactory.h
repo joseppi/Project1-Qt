@@ -2,12 +2,23 @@
 #define SHAPEFACTORY_H
 
 #include "shape.h"
+#include <qlist.h>
+
+
+class QPainter;
+class QBrush;
+class QPen;
+class QRect;
 
 class ShapeFactory
 {
 public:
+    QList<Shape*> shapes;
+
+public:
     ShapeFactory();
-    Shape CreateShape(ShapeType type);
+    Shape* CreateShape(ShapeType type);
+    void DrawShapeList(QPainter &painter, QBrush &brush, QPen &pen,const QRect &scene_rect);
 };
 
 #endif // SHAPEFACTORY_H
