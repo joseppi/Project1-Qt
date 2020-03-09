@@ -22,6 +22,7 @@ class Shape
 {
 public:
     Shape();
+    virtual void Draw();
 
 public:
     Position pos;

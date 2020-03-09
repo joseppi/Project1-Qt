@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class MainWindow;
+
 namespace Ui {
 class Hierarchy;
 }
@@ -11,8 +13,9 @@ class Hierarchy : public QWidget
 {
     Q_OBJECT
 
+
 public:
-    explicit Hierarchy(QWidget *parent = nullptr);
+    explicit Hierarchy(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~Hierarchy();
 
 public slots:
@@ -22,6 +25,7 @@ public slots:
 
 private:
     Ui::Hierarchy *ui;
+    MainWindow* main_window;
 
 signals:
     void entityChanged(int id);

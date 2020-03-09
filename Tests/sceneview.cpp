@@ -1,5 +1,6 @@
-#include "sceneview.h"
+    #include "sceneview.h"
 #include <QPainter>
+#include "shapefactory.h"
 
 SceneView::SceneView(QWidget *parent) : QWidget(parent)
 {

@@ -4,3 +4,8 @@ rectangle::rectangle()
 {
 
 }
+
+void rectangle::Draw()
+{
+
+}

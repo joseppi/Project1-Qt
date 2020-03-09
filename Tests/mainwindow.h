@@ -10,14 +10,19 @@ class MainWindow;
 class Hierarchy;
 class Inspector;
 class SceneView;
+class ShapeFactory;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    ShapeFactory* shape_factory;
+
+public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void AddShape();
 public slots:
     void ActionQuit();
     void ActionLoad();

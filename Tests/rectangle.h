@@ -7,6 +7,7 @@ class rectangle : public Shape
 {
 public:
     rectangle();
+    void Draw() override;
 };
 
 #endif // RECTANGLE_H

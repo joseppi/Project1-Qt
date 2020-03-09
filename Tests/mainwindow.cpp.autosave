@@ -86,7 +86,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::AddShape()
 {
-    Shape* new_shape = shape_factory->CreateShape(RECTANGLE);
+    shape_factory->CreateShape(RECTANGLE);
 
 
 }

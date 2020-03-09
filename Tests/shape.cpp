@@ -4,3 +4,8 @@ Shape::Shape()
 {
 
 }
+
+void Shape::Draw()
+{
+
+}
