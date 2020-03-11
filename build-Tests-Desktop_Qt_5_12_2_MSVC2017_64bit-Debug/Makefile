@@ -247,6 +247,7 @@ Makefile: ..\Tests\Tests.pro C:\Qt\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.c
 		..\Tests\Tests.pro \
 		C:\Qt\5.12.2\msvc2017_64\lib\Qt5Widgets.prl \
 		C:\Qt\5.12.2\msvc2017_64\lib\Qt5Gui.prl \
+		C:\Qt\5.12.2\msvc2017_64\lib\Qt5Xml.prl \
 		C:\Qt\5.12.2\msvc2017_64\lib\Qt5Core.prl \
 		C:\Qt\5.12.2\msvc2017_64\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\Tests\Tests.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -420,6 +421,7 @@ C:\Qt\5.12.2\msvc2017_64\mkspecs\features\lex.prf:
 ..\Tests\Tests.pro:
 C:\Qt\5.12.2\msvc2017_64\lib\Qt5Widgets.prl:
 C:\Qt\5.12.2\msvc2017_64\lib\Qt5Gui.prl:
+C:\Qt\5.12.2\msvc2017_64\lib\Qt5Xml.prl:
 C:\Qt\5.12.2\msvc2017_64\lib\Qt5Core.prl:
 C:\Qt\5.12.2\msvc2017_64\lib\qtmaind.prl:
 qmake: FORCE

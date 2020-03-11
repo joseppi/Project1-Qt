@@ -70,12 +70,63 @@ void MainWindow::ActionLoadProject() {
        QMessageBox::information(this, "Info Load", path);
     }
 
+    QDomDocument document;
+
+    //Load the file
+    QFile file(path);
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file";
+    }
+    else
+    {
+        if (!document.setContent(&file))
+        {
+            qDebug() << "Failed to load document";
+        }
+        file.close();
+    }
+
+    //get the root element
+    QDomElement root = document.firstChildElement();
+
+    //List of the Elements
+    //ListElements(root,)
+
 }
 
 
 void MainWindow::ActionSaveProject() {
-    QString path = QFileDialog::getOpenFileName(this, "Open Project");
+    //Get File Path
+    QString path = QFileDialog::getSaveFileName(this, "Save Project");
     QList<QListWidgetItem*> list = hierarchy->GetListViewEntities();
+
+    //Create stream
+    QString output;
+    QDomDocument document;
+
+    //Make root element
+    QDomElement root = document.createElement("Books");
+
+    //Add it to the document
+    document.appendChild(root);
+
+    //Write to file
+    QFile file(path);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to save file for writting";
+    }
+    else
+    {
+        QTextStream stream(&file);
+        stream << document.toString();
+        file.close();
+        qDebug() << "Finished";
+    }
+
+
 
     if (!path.isEmpty())
     {
@@ -116,5 +167,23 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_S)
     {
         qDebug("s");
+    }
+}
+
+void MainWindow::ListElements(QDomElement root, QString tagName, QString attribute)
+{
+    QDomNodeList items = root.elementsByTagName(tagName);
+    qDebug() << "Total items = "<< items.count();
+    for (int i = 0; i<items.count(); i++)
+    {
+        QDomNode itemnode = items.at(i);
+
+        //convert to element
+        if (itemnode.isElement())
+        {
+            QDomElement itemele = itemnode.toElement();
+            qDebug() << itemele.attribute(attribute);
+
+        }
     }
 }
