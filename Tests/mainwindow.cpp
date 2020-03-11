@@ -91,8 +91,8 @@ void MainWindow::ActionLoadProject() {
     //get the root element
     QDomElement root = document.firstChildElement();
 
-    //List of the Elements
-    //ListElements(root,)
+    //List of the Elements(root,tagname,attribute)
+    ListElements(root,"Book","Name");
 
 }
 
@@ -109,11 +109,22 @@ void MainWindow::ActionSaveProject() {
     //Make root element
     QDomElement root = document.createElement("Books");
 
+    //Add some elements
+    for(int i = 0; i < 10; i++)
+    {
+        QDomElement node = document.createElement("Book");
+        node.setAttribute("Name", "My Book" + QString::number(i));
+        node.setAttribute("ID", QString::number(i));
+        root.appendChild(node);
+    }
+
     //Add it to the document
     document.appendChild(root);
 
     //Write to file
-    QFile file(path);
+    QString final_path = path;
+    final_path.append(".txt");
+    QFile file(final_path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         qDebug() << "Failed to save file for writting";
