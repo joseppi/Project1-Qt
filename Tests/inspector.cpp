@@ -1,23 +1,26 @@
 #include "inspector.h"
 #include "ui_transform.h"
-#include "ui_mesh.h"
+#include "mainwindow.h"
+#include "ui_hierarchy.h"
+#include "hierarchy.h"
+#include "shape.h"
 
-Inspector::Inspector(QWidget *parent) :
+Inspector::Inspector(QWidget *parent, MainWindow *main_window) :
     QWidget(parent),
-    ui_transorm(new Ui::Transform),
-    ui_mesh(new Ui::Mesh)
+    ui_transorm(new Ui::Transform)
 {
     QWidget *transform_widget = new QWidget;
     ui_transorm->setupUi((transform_widget));
-
-    mesh_widget = new QWidget;
-    ui_mesh->setupUi(mesh_widget);
+    this->main_window =main_window;
 
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(transform_widget);
-    layout->addWidget(mesh_widget);
     layout->addItem(new QSpacerItem(1,1,QSizePolicy::Expanding,QSizePolicy::Expanding));
     setLayout(layout);
+
+    connect(main_window->hierarchy->ui->listWidget,SIGNAL(itemSelectionChanged()),SLOT(OnCurrentItemChanged()));
+
+
 
 }
 
@@ -26,12 +29,14 @@ Inspector::~Inspector()
 
 }
 
+void Inspector::OnCurrentItemChanged()
+{
+    QListWidgetItem* item = main_window->hierarchy->ui->listWidget->currentItem();
 
-void Inspector::OnEntitySelected(int entityId) {
-    if (entityId % 2 == 0){
-        mesh_widget->show();
-    }
-    else {
-        mesh_widget->hide();
-    }
+    QVariant shape_info_variant = item->data(Qt::UserRole);
+    qintptr shape_pointer_as_int = shape_info_variant.toInt();
+    Shape* newest_shape = (Shape*)shape_pointer_as_int;
+
+    ui_transorm->ScalX->setValue(newest_shape->rect.width());
 }
+

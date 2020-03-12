@@ -8,6 +8,7 @@ class QBrush;
 class QPen;
 class QRect;
 
+
 enum ShapeType {
     SHAPE_UNDEFINED,
     RECTANGLE,
@@ -24,6 +25,7 @@ public:
 public:
     QRect rect;
     ShapeType type;
+
 };
 
 #endif // SHAPE_H

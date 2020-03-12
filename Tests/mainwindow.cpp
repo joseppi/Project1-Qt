@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     hierarchy = new Hierarchy(nullptr,this);
-    inspector = new Inspector();
+    inspector = new Inspector(nullptr,this);
     scene_view = new SceneView(nullptr,this);
 
 
@@ -168,9 +168,9 @@ MainWindow::~MainWindow()
     delete ui_main;
 }
 
-void MainWindow::AddShape()
+Shape* MainWindow::AddShape()
 {
-    shape_factory->CreateShape(RECTANGLE);
+    return shape_factory->CreateShape(RECTANGLE);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
