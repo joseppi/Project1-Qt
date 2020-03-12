@@ -54,7 +54,6 @@ public:
 
         ScalX = new QDoubleSpinBox(Transform);
         ScalX->setObjectName(QString::fromUtf8("ScalX"));
-        ScalX->setMaximum(1000.000000000000000);
 
         gridLayout->addWidget(ScalX, 3, 1, 1, 1);
 
@@ -65,7 +64,6 @@ public:
 
         ScalZ = new QDoubleSpinBox(Transform);
         ScalZ->setObjectName(QString::fromUtf8("ScalZ"));
-        ScalZ->setMaximum(1000.000000000000000);
 
         gridLayout->addWidget(ScalZ, 3, 3, 1, 1);
 
@@ -76,13 +74,11 @@ public:
 
         PosX = new QDoubleSpinBox(Transform);
         PosX->setObjectName(QString::fromUtf8("PosX"));
-        PosX->setMaximum(1000.000000000000000);
 
         gridLayout->addWidget(PosX, 2, 1, 1, 1);
 
         ScalY = new QDoubleSpinBox(Transform);
         ScalY->setObjectName(QString::fromUtf8("ScalY"));
-        ScalY->setMaximum(1000.000000000000000);
 
         gridLayout->addWidget(ScalY, 3, 2, 1, 1);
 
@@ -98,7 +94,6 @@ public:
 
         PosY = new QDoubleSpinBox(Transform);
         PosY->setObjectName(QString::fromUtf8("PosY"));
-        PosY->setMaximum(1000.000000000000000);
 
         gridLayout->addWidget(PosY, 2, 2, 1, 1);
 
@@ -126,7 +121,7 @@ public:
         label_6->setText(QApplication::translate("Transform", "Z", nullptr));
         label_3->setText(QApplication::translate("Transform", "Position", nullptr));
         label_5->setText(QApplication::translate("Transform", "Y", nullptr));
-        label->setText(QApplication::translate("Transform", "Size", nullptr));
+        label->setText(QApplication::translate("Transform", "Scale", nullptr));
         label_4->setText(QApplication::translate("Transform", "X", nullptr));
         label_2->setText(QApplication::translate("Transform", "Transform", nullptr));
     } // retranslateUi

@@ -8,6 +8,8 @@
 #include <QSettings>
 
 
+class Shape;
+
 
 namespace Ui {
 class MainWindow;
@@ -28,7 +30,7 @@ public:
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void AddShape();
+    Shape* AddShape();
     void keyPressEvent(QKeyEvent *event);
     void ListElements(QDomElement root, QString tagName, QString attribute);
 
@@ -41,12 +43,17 @@ public slots:
     void ActionLoadLayout();
     void ActionSaveLayout();
 
-private:
-    Ui::MainWindow *ui_main;
-
+public:
     Hierarchy *hierarchy;
     Inspector *inspector;
     SceneView *scene_view;
+
+private:
+    Ui::MainWindow *ui_main;
+
+
+
+
 };
 
 #endif // MAINWINDOW_H

@@ -19,12 +19,5 @@ void rectangle::Draw(QPainter &painter, QBrush &brush, QPen &pen,const  QRect &s
         painter.setBrush(brush);
         painter.setPen(pen);
 
-        //Draw circle
-        int r = scene_rect.width() /2;
-        int w = r*2;
-        int h = r*2;
-        int x = scene_rect.width() /2 - r;
-        int y = scene_rect.height() /2 - r;
-        painter.drawEllipse(rect);
     painter.drawRect(rect);
 }

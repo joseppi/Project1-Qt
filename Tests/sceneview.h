@@ -14,6 +14,7 @@ class SceneView : public QWidget
 public:
     explicit SceneView(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     void DrawBigCircle();
+    void DrawScene();
 
 public slots:
     void paintEvent(QPaintEvent *) override;

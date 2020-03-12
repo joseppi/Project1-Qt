@@ -8,22 +8,25 @@ namespace Ui {
     class Mesh;
 }
 
+class MainWindow;
+class QListWidgetItem;
+
 class Inspector : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Inspector(QWidget *parent = nullptr);
+    explicit Inspector(QWidget *parent = nullptr, MainWindow *main_window = nullptr);
     ~Inspector();
 
 private:
     Ui::Transform *ui_transorm;
-    Ui::Mesh *ui_mesh;
-
-    QWidget *mesh_widget;
 
 public slots:
-    void OnEntitySelected(int entityId);
+    void OnCurrentItemChanged();
+
+private:
+    MainWindow* main_window;
 
 };
 

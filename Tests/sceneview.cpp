@@ -2,10 +2,14 @@
 #include <QPainter>
 #include "shapefactory.h"
 #include "mainwindow.h"
+#include "hierarchy.h"
+#include "ui_hierarchy.h"
 
 SceneView::SceneView(QWidget *parent, MainWindow* main_window) : QWidget(parent)
 {
     this->main_window = main_window;
+
+    connect(this->main_window->hierarchy->ui->AddEntityBtn,SIGNAL(clicked()),SLOT(OnAddEntity()));
 }
 
 void SceneView::DrawBigCircle()
@@ -45,8 +49,9 @@ void SceneView::DrawBigCircle()
     painter.drawEllipse(circleRect);
 }
 
-void SceneView::paintEvent(QPaintEvent*) {
-
+void SceneView::DrawScene()
+{
+    //must be called in paintevent
     QPainter painter(this);
     QColor blueColor = QColor::fromRgb(127,190,220);
     QColor whiteColor = QColor::fromRgb(255,255,255);
@@ -65,5 +70,12 @@ void SceneView::paintEvent(QPaintEvent*) {
     //QRect rect = QRect(0,0,100,100);
 
     main_window->shape_factory->DrawShapeList(painter,brush,pen,rect());
+}
+
+void SceneView::paintEvent(QPaintEvent*) {
+
+    DrawScene();
 
 }
+
+

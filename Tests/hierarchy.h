@@ -25,8 +25,9 @@ public slots:
     void OnEntitySelected();
     QList<QListWidgetItem*> GetListViewEntities();
 
-private:
+public:
     Ui::Hierarchy *ui;
+private:
     MainWindow* main_window;
 
 signals:
