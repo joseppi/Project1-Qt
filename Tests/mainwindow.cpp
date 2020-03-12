@@ -1,5 +1,6 @@
 #include <QtWidgets>
 
+
 #if defined(QT_PRINTSUPPORT_LIB)
 #include <QtPrintSupport/qtprintsupportglobal.h>
 #if QT_CONFIG(printdialog)
@@ -27,7 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui_main->actionLoad,SIGNAL(triggered()),SLOT(ActionLoadProject()));
     connect(ui_main->actionSave,SIGNAL(triggered()),SLOT(ActionSaveProject()));
     connect(ui_main->actionNew,SIGNAL(triggered()),SLOT(ActionNewProject()));
-
+    connect(ui_main->actionLoadLayout,SIGNAL(triggered()),SLOT(ActionLoadLayout()));
+    connect(ui_main->actionSaveLayout,SIGNAL(triggered()),SLOT(ActionSaveLayout()));
 
 
     hierarchy = new Hierarchy(nullptr,this);
@@ -47,9 +49,9 @@ MainWindow::MainWindow(QWidget *parent) :
     layout->addWidget(scene_view);
 
     ui_main->centralWidget->setLayout(layout);
+    qDebug() << this->geometry().width();
 
 }
-
 void MainWindow::ActionQuitProject() {
     QMessageBox::StandardButton button = QMessageBox::question(
                 this,
@@ -159,9 +161,25 @@ void MainWindow::ActionNewProject(){
     {
        QMessageBox::information(this, "Info Load", path);
     }
-
 }
 
+void MainWindow::ActionLoadLayout()
+{
+    QSettings settings("Pipo", "Cute Engine");
+    this->restoreState(settings.value("dockpos").toByteArray());
+
+    qDebug() << this->geometry().width();
+
+    qDebug("loadLayout");
+}
+
+void MainWindow::ActionSaveLayout()
+{
+    QSettings settings("Pipo", "Cute Engine");
+    settings.setValue("dockpos",this->saveState());
+
+    qDebug("saveLayout");
+}
 
 MainWindow::~MainWindow()
 {

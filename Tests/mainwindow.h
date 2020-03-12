@@ -1,9 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QApplication>
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QtXml>
+#include <QSettings>
+
 
 
 namespace Ui {
@@ -29,11 +32,14 @@ public:
     void keyPressEvent(QKeyEvent *event);
     void ListElements(QDomElement root, QString tagName, QString attribute);
 
+
 public slots:
     void ActionQuitProject();
     void ActionLoadProject();
     void ActionSaveProject();
     void ActionNewProject();
+    void ActionLoadLayout();
+    void ActionSaveLayout();
 
 private:
     Ui::MainWindow *ui_main;
