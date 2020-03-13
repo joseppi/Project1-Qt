@@ -31,12 +31,14 @@ Inspector::~Inspector()
 
 void Inspector::OnCurrentItemChanged()
 {
+
     QListWidgetItem* item = main_window->hierarchy->ui->listWidget->currentItem();
 
     QVariant shape_info_variant = item->data(Qt::UserRole);
     qintptr shape_pointer_as_int = shape_info_variant.toInt();
     Shape* newest_shape = (Shape*)shape_pointer_as_int;
-
     ui_transorm->ScalX->setValue(newest_shape->rect.width());
+
+
 }
 

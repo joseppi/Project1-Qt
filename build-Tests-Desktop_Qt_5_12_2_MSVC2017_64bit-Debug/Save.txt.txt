@@ -1,0 +1,5 @@
+<Entities>
+ <Shapes 0 Type="-842150451">
+  <Rect RectX="0" RectH="100" RectY="0" RectW="100"/>
+ </Shapes 0>
+</Entities>

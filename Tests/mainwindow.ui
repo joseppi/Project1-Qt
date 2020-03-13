@@ -514,7 +514,7 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
+     <width>400</width>
      <height>38</height>
     </size>
    </property>
@@ -984,7 +984,7 @@
     <string>Quit</string>
    </property>
    <property name="shortcut">
-    <string extracomment="Ctrl+Q">Ctrl+Q</string>
+    <string>Esc</string>
    </property>
   </action>
   <action name="actionSave">

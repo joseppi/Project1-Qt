@@ -168,7 +168,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(dockBase->sizePolicy().hasHeightForWidth());
         dockBase->setSizePolicy(sizePolicy);
-        dockBase->setMinimumSize(QSize(0, 38));
+        dockBase->setMinimumSize(QSize(400, 38));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         QBrush brush9(QColor(56, 240, 133, 255));
@@ -263,7 +263,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", nullptr));
 #ifndef QT_NO_SHORTCUT
-        actionQuit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Q", nullptr));
+        actionQuit->setShortcut(QApplication::translate("MainWindow", "Esc", nullptr));
 #endif // QT_NO_SHORTCUT
         actionSave->setText(QApplication::translate("MainWindow", "Save", nullptr));
 #ifndef QT_NO_SHORTCUT

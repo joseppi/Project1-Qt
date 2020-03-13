@@ -2,6 +2,7 @@
 #define SHAPE_H
 
 #include <qrect.h>
+#include <QPainter>
 
 class QPainter;
 class QBrush;

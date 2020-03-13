@@ -562,7 +562,7 @@ release\moc_hierarchy.cpp: ..\Tests\hierarchy.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		release\moc_predefs.h \
 		C:\Qt\5.12.2\msvc2017_64\bin\moc.exe
-	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\hierarchy.h -o release\moc_hierarchy.cpp
+	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\hierarchy.h -o release\moc_hierarchy.cpp
 
 release\moc_inspector.cpp: ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -670,7 +670,7 @@ release\moc_inspector.cpp: ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		release\moc_predefs.h \
 		C:\Qt\5.12.2\msvc2017_64\bin\moc.exe
-	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\inspector.h -o release\moc_inspector.cpp
+	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\inspector.h -o release\moc_inspector.cpp
 
 release\moc_mainwindow.cpp: ..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
@@ -916,7 +916,7 @@ release\moc_mainwindow.cpp: ..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\QSettings \
 		release\moc_predefs.h \
 		C:\Qt\5.12.2\msvc2017_64\bin\moc.exe
-	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_sceneview.cpp: ..\Tests\sceneview.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -1024,7 +1024,7 @@ release\moc_sceneview.cpp: ..\Tests\sceneview.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		release\moc_predefs.h \
 		C:\Qt\5.12.2\msvc2017_64\bin\moc.exe
-	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\sceneview.h -o release\moc_sceneview.cpp
+	C:\Qt\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Documents/GitHub/Project1-Qt/build-Tests-Desktop_Qt_5_12_2_MSVC2017_64bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Documents/GitHub/Project1-Qt/Tests -IC:/Qt/5.12.2/msvc2017_64/include -IC:/Qt/5.12.2/msvc2017_64/include/QtWidgets -IC:/Qt/5.12.2/msvc2017_64/include/QtGui -IC:/Qt/5.12.2/msvc2017_64/include/QtANGLE -IC:/Qt/5.12.2/msvc2017_64/include/QtXml -IC:/Qt/5.12.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\Tests\sceneview.h -o release\moc_sceneview.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1182,7 +1182,13 @@ release\hierarchy.obj: ..\Tests\hierarchy.cpp ..\Tests\hierarchy.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		ui_hierarchy.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\Tests\shapefactory.h \
+		..\Tests\shape.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpen.h \
+		..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -1190,17 +1196,6 @@ release\hierarchy.obj: ..\Tests\hierarchy.cpp ..\Tests\hierarchy.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		..\Tests\shapefactory.h \
-		..\Tests\shape.h \
-		..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMainWindow \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QKeyEvent \
@@ -1435,7 +1430,7 @@ release\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		ui_transform.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -1443,20 +1438,6 @@ release\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QDoubleSpinBox \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qspinbox.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
-		..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMainWindow \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
@@ -1485,6 +1466,7 @@ release\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcborvalue.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qdatetime.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcborcommon.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\quuid.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcbormap.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcborstream.h \
@@ -1589,24 +1571,27 @@ release\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtXml\qtxmlversion.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\QSettings \
 		ui_hierarchy.h \
+		..\Tests\hierarchy.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		..\Tests\hierarchy.h \
-		..\Tests\shape.h
+		..\Tests\shape.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpen.h
 
 release\main.obj: ..\Tests\main.cpp ..\Tests\mainwindow.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
@@ -2330,18 +2315,13 @@ release\mainwindow.obj: ..\Tests\mainwindow.cpp C:\Qt\5.12.2\msvc2017_64\include
 		C:\Qt\5.12.2\msvc2017_64\include\QtXml\qtxmlversion.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\QSettings \
 		ui_mainwindow.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QDockWidget \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QToolBar \
 		..\Tests\hierarchy.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QListWidget \
 		..\Tests\inspector.h \
 		..\Tests\sceneview.h \
 		..\Tests\shapefactory.h \
 		..\Tests\shape.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		..\Tests\rectangle.h
 
 release\rectangle.obj: ..\Tests\rectangle.cpp ..\Tests\rectangle.h \
@@ -2372,6 +2352,7 @@ release\rectangle.obj: ..\Tests\rectangle.cpp ..\Tests\rectangle.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qsize.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
@@ -2697,16 +2678,7 @@ release\sceneview.obj: ..\Tests\sceneview.cpp ..\Tests\sceneview.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
-		ui_hierarchy.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h
+		ui_hierarchy.h
 
 release\shape.obj: ..\Tests\shape.cpp ..\Tests\shape.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qrect.h \
@@ -2734,7 +2706,66 @@ release\shape.obj: ..\Tests\shape.cpp ..\Tests\shape.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qsize.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qpoint.h
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qrgba64.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qhash.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobject.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qimage.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtransform.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qvector.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qregion.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qline.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpen.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qbrush.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfont.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h
 
 release\shapefactory.obj: ..\Tests\shapefactory.cpp ..\Tests\shapefactory.h \
 		..\Tests\shape.h \
@@ -2764,6 +2795,20 @@ release\shapefactory.obj: ..\Tests\shapefactory.cpp ..\Tests\shapefactory.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qsize.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qlist.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qalgorithms.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qiterator.h \
@@ -2779,23 +2824,8 @@ release\shapefactory.obj: ..\Tests\shapefactory.cpp ..\Tests\shapefactory.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringbuilder.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qpair.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qregexp.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qstringmatcher.h \
-		..\Tests\rectangle.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtCore\qshareddata.h \
@@ -2823,7 +2853,8 @@ release\shapefactory.obj: ..\Tests\shapefactory.cpp ..\Tests\shapefactory.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qbrush.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfontinfo.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfont.h \
-		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h
+		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h \
+		..\Tests\rectangle.h
 
 release\qrc_icons.obj: release\qrc_icons.cpp 
 

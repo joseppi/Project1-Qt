@@ -95,29 +95,38 @@ void MainWindow::ActionLoadProject() {
 
     //List of the Elements(root,tagname,attribute)
     ListElements(root,"Book","Name");
-
 }
 
 
 void MainWindow::ActionSaveProject() {
     //Get File Path
-    QString path = QFileDialog::getSaveFileName(this, "Save Project");
-    QList<QListWidgetItem*> list = hierarchy->GetListViewEntities();
+    //QString path = QFileDialog::getSaveFileName(this, "Save Project");
+    QString path = QDir::currentPath() + "/Save.txt";
+    QList<Shape*> list = shape_factory->shapes;
 
     //Create stream
     QString output;
     QDomDocument document;
 
     //Make root element
-    QDomElement root = document.createElement("Books");
+    QDomElement root = document.createElement("Entities");
+
 
     //Add some elements
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < list.length(); i++)
     {
-        QDomElement node = document.createElement("Book");
-        node.setAttribute("Name", "My Book" + QString::number(i));
-        node.setAttribute("ID", QString::number(i));
-        root.appendChild(node);
+        QDomElement node_shapes = document.createElement("Shapes " + QString::number(i));
+        QRect ret = list[i]->rect;
+        QDomElement node_rect = document.createElement("Rect");
+        node_rect.setAttribute("RectX",ret.x());
+        node_rect.setAttribute("RectY",ret.y());
+        node_rect.setAttribute("RectH",ret.height());
+        node_rect.setAttribute("RectW",ret.width());
+        node_shapes.appendChild(node_rect);
+
+        ShapeType type = list[i]->type;
+        node_shapes.setAttribute("Type", QString::number(type));
+        root.appendChild(node_shapes);
     }
 
     //Add it to the document
@@ -139,16 +148,14 @@ void MainWindow::ActionSaveProject() {
         qDebug() << "Finished";
     }
 
-
-
     if (!path.isEmpty())
     {
 
        //QMessageBox::information(this, "Info Save", path);
        if (!list.isEmpty())
        {
-        QListWidgetItem* item = list.first();
-        QMessageBox::information(this, "Item info: ", item->text());
+        Shape* item = list.first();
+        QMessageBox::information(this, "Item info: ",QString::number(item->rect.height()));
        }
 
     }
