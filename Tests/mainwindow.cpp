@@ -65,11 +65,77 @@ void MainWindow::ActionQuitProject() {
 
 }
 
-void MainWindow::ActionLoadProject() {
-    QString path = QFileDialog::getOpenFileName(this, "Open Project");
+void MainWindow::ActionSaveProject() {
+    //Get File Path
+    //QString path = QFileDialog::getSaveFileName(this, "Save Project");
+    QString path = QDir::currentPath() + "/Save.txt";
+    QList<Shape*> list = shape_factory->shapes;
+
+    //Create stream
+    QString output;
+    QDomDocument document;
+
+    //Make root element
+    QDomElement root = document.createElement("Entities");
+
+
+    //Add some elements
+    for(int i = 0; i < list.length(); i++)
+    {
+        QDomElement node_shapes = document.createElement("Shape");
+        node_shapes.setAttribute("id", QString::number(i));
+
+        ShapeType type = list[i]->type;
+        node_shapes.setAttribute("Type", QString::number(type));
+
+        QRect ret = list[i]->rect;
+        node_shapes.setAttribute("x",ret.x());
+        node_shapes.setAttribute("y",ret.y());
+        node_shapes.setAttribute("h",ret.height());
+        node_shapes.setAttribute("w",ret.width());
+
+
+
+
+        root.appendChild(node_shapes);
+    }
+
+    //Add it to the document
+    document.appendChild(root);
+
+    //Write to file
+
+    QFile file(path);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to save file for writting";
+    }
+    else
+    {
+        QTextStream stream(&file);
+        stream << document.toString();
+        file.close();
+        qDebug() << "Finished";
+    }
+
     if (!path.isEmpty())
     {
-       QMessageBox::information(this, "Info Load", path);
+
+       //QMessageBox::information(this, "Info Save", path);
+       if (!list.isEmpty())
+       {
+        qDebug () << path;
+       }
+
+    }
+}
+
+void MainWindow::ActionLoadProject() {
+    //QString path = QFileDialog::getOpenFileName(this, "Open Project");
+    QString path = QDir::currentPath() + "/Save.txt";
+    if (!path.isEmpty())
+    {
+       //QMessageBox::information(this, "Info Load", path);
     }
 
     QDomDocument document;
@@ -94,71 +160,38 @@ void MainWindow::ActionLoadProject() {
     QDomElement root = document.firstChildElement();
 
     //List of the Elements(root,tagname,attribute)
-    ListElements(root,"Book","Name");
+    QList<Shape*> shapeList = ListElements(root,"Shape");
+
 }
 
-
-void MainWindow::ActionSaveProject() {
-    //Get File Path
-    //QString path = QFileDialog::getSaveFileName(this, "Save Project");
-    QString path = QDir::currentPath() + "/Save.txt";
-    QList<Shape*> list = shape_factory->shapes;
-
-    //Create stream
-    QString output;
-    QDomDocument document;
-
-    //Make root element
-    QDomElement root = document.createElement("Entities");
-
-
-    //Add some elements
-    for(int i = 0; i < list.length(); i++)
+QList<Shape*> MainWindow::ListElements(QDomElement root, QString tagName)
+{
+    QList<Shape*> ret;
+    QDomNodeList items = root.elementsByTagName(tagName);
+    qDebug() << "Total items = "<< items.count();
+    for (int i = 0; i < items.count(); i++)
     {
-        QDomElement node_shapes = document.createElement("Shapes " + QString::number(i));
-        QRect ret = list[i]->rect;
-        QDomElement node_rect = document.createElement("Rect");
-        node_rect.setAttribute("RectX",ret.x());
-        node_rect.setAttribute("RectY",ret.y());
-        node_rect.setAttribute("RectH",ret.height());
-        node_rect.setAttribute("RectW",ret.width());
-        node_shapes.appendChild(node_rect);
+        QDomNode itemnode = items.at(i);
+        //convert to element
+        if (itemnode.isElement())
+        {
+            Shape new_shape;
+            QDomElement itemele = itemnode.toElement();
 
-        ShapeType type = list[i]->type;
-        node_shapes.setAttribute("Type", QString::number(type));
-        root.appendChild(node_shapes);
+            new_shape.id = itemele.attribute("id").toInt();
+            new_shape.type =(ShapeType)itemele.attribute("Type").toInt();
+            QRect rect;
+            rect.setRect(
+                        itemele.attribute("x").toInt(),
+                        itemele.attribute("y").toInt(),
+                        itemele.attribute("h").toInt(),
+                        itemele.attribute("w").toInt());
+            new_shape.rect = rect;
+
+            ret.push_back(&new_shape);
+        }
     }
-
-    //Add it to the document
-    document.appendChild(root);
-
-    //Write to file
-    QString final_path = path;
-    final_path.append(".txt");
-    QFile file(final_path);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        qDebug() << "Failed to save file for writting";
-    }
-    else
-    {
-        QTextStream stream(&file);
-        stream << document.toString();
-        file.close();
-        qDebug() << "Finished";
-    }
-
-    if (!path.isEmpty())
-    {
-
-       //QMessageBox::information(this, "Info Save", path);
-       if (!list.isEmpty())
-       {
-        Shape* item = list.first();
-        QMessageBox::information(this, "Item info: ",QString::number(item->rect.height()));
-       }
-
-    }
+    return ret;
 }
 
 void MainWindow::ActionNewProject(){
@@ -206,20 +239,4 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void MainWindow::ListElements(QDomElement root, QString tagName, QString attribute)
-{
-    QDomNodeList items = root.elementsByTagName(tagName);
-    qDebug() << "Total items = "<< items.count();
-    for (int i = 0; i<items.count(); i++)
-    {
-        QDomNode itemnode = items.at(i);
 
-        //convert to element
-        if (itemnode.isElement())
-        {
-            QDomElement itemele = itemnode.toElement();
-            qDebug() << itemele.attribute(attribute);
-
-        }
-    }
-}

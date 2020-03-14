@@ -1587,6 +1587,7 @@ release\inspector.obj: ..\Tests\inspector.cpp ..\Tests\inspector.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\Tests\shapefactory.h \
 		..\Tests\shape.h \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		C:\Qt\5.12.2\msvc2017_64\include\QtGui\qpainter.h \

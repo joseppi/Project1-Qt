@@ -155,7 +155,7 @@ public:
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), dockInspector);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 922, 21));
+        menuBar->setGeometry(QRect(0, 0, 922, 20));
         menuCreate = new QMenu(menuBar);
         menuCreate->setObjectName(QString::fromUtf8("menuCreate"));
         menuLayouts = new QMenu(menuBar);
@@ -271,7 +271,7 @@ public:
 #endif // QT_NO_SHORTCUT
         actionLoad->setText(QApplication::translate("MainWindow", "Load", nullptr));
 #ifndef QT_NO_SHORTCUT
-        actionLoad->setShortcut(QApplication::translate("MainWindow", "Ctrl+O", nullptr));
+        actionLoad->setShortcut(QApplication::translate("MainWindow", "Ctrl+A", nullptr));
 #endif // QT_NO_SHORTCUT
         actionNew->setText(QApplication::translate("MainWindow", "New", nullptr));
 #ifndef QT_NO_SHORTCUT

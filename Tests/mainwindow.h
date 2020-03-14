@@ -32,7 +32,7 @@ public:
     ~MainWindow();
     Shape* AddShape();
     void keyPressEvent(QKeyEvent *event);
-    void ListElements(QDomElement root, QString tagName, QString attribute);
+    QList<Shape*> ListElements(QDomElement root, QString tagName);
 
 
 public slots:
