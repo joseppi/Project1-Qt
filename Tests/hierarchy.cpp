@@ -23,10 +23,12 @@ void Hierarchy::OnAddEntity() {
 
     auto *new_item = new QListWidgetItem("NewShape");
 
-    qintptr shape_info = (qintptr)new_shape;
-    QVariant shape_info_variant;
-    shape_info_variant.setValue(shape_info);
-    new_item->setData(Qt::UserRole, shape_info_variant);
+    //qintptr shape_info = (qintptr)new_shape;
+    //QVariant shape_info_variant;
+    //shape_info_variant.setValue(5);
+    //new_item->setData(Qt::UserRole, shape_info_variant);
+    new_item->setData(Qt::UserRole, new_shape->id);
+
 
     ui->listWidget->addItem(new_item);
 

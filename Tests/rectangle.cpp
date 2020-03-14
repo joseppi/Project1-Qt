@@ -3,7 +3,7 @@
 #include <qrect.h>
 rectangle::rectangle() : Shape()
 {
-
+    this->type = ShapeType::RECTANGLE;
 }
 
 void rectangle::Draw(QPainter &painter, QBrush &brush, QPen &pen,const  QRect &scene_rect)

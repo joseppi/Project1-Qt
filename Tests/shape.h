@@ -26,6 +26,7 @@ public:
 public:
     QRect rect;
     ShapeType type;
+    int id;
 
 };
 

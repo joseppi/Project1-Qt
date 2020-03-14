@@ -18,6 +18,7 @@ Shape* ShapeFactory::CreateShape(ShapeType type)
         break;
 
     }
+   new_shape->id = shapes.length();
 
    shapes.append(new_shape);
    return new_shape;
