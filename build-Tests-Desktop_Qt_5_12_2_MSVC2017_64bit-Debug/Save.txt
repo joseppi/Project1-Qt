@@ -1,6 +1,7 @@
 <Entities>
- <Shape id="0" w="100" h="100" y="0" Type="1" x="0"/>
- <Shape id="1" w="100" h="100" y="0" Type="1" x="0"/>
- <Shape id="2" w="100" h="100" y="0" Type="1" x="0"/>
- <Shape id="3" w="100" h="100" y="0" Type="1" x="0"/>
+ <Shape Type="1" id="0">
+  <rect w="100" h="100" x="0" y="0"/>
+  <colorFill b="255" r="255" g="255" a="255"/>
+  <colorStroke b="0" r="0" g="0" a="255"/>
+ </Shape>
 </Entities>
