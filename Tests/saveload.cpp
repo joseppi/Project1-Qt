@@ -1,12 +1,25 @@
 #include "saveload.h"
 #include "shapefactory.h"
+#include "rectangle.h"
+#include "elipse.h"
+#include "shape.h"
+#include "rectangle.h"
+#include "elipse.h"
 #include "mainwindow.h"
+#include "sceneview.h"
+#include "hierarchy.h"
 #include <QtXml>
+#include <QPen>
 
 
 SaveLoad::SaveLoad(QWidget *parent, MainWindow* main_window) : QWidget(parent)
 {
     this->main_window = main_window;
+    ActionLoadLayout();
+
+    qDebug() << this->geometry().width();
+
+    qDebug("loadLayout");
 }
 
 void SaveLoad::ActionSaveProject() {
@@ -26,11 +39,20 @@ void SaveLoad::ActionSaveProject() {
     //Add some elements
     for(int i = 0; i < list.length(); i++)
     {
+        //Save ID
         QDomElement node_shapes = document.createElement("Shape");
         node_shapes.setAttribute("id", QString::number(i));
 
+        //Save Type
         ShapeType type = list[i]->type;
         node_shapes.setAttribute("Type", QString::number(type));
+
+        //Save PenStyle
+        Qt::PenStyle style = list[i]->style;
+        node_shapes.setAttribute("penStyle", QString::number(style));
+
+        //Save StrokeThickness
+        node_shapes.setAttribute("strokeThickness", QString::number(list[i]->stroke_thickness));
 
         //Save Rectangle
         QRect ret = list[i]->rect;
@@ -60,10 +82,6 @@ void SaveLoad::ActionSaveProject() {
         node_color_stroke.setAttribute("b", colorStroke.blue());
         node_color_stroke.setAttribute("a", colorStroke.alpha());
         node_shapes.appendChild(node_color_stroke);
-
-
-
-
 
         root.appendChild(node_shapes);
     }
@@ -99,8 +117,12 @@ void SaveLoad::ActionSaveProject() {
 }
 
 void SaveLoad::ActionLoadProject() {
-    //QString path = QFileDialog::getOpenFileName(this, "Open Project");
-    QString path = QDir::currentPath() + "/Save.txt";
+
+    //Clear actual scene
+    main_window->hierarchy->ClearEntities();
+
+    QString path = QFileDialog::getOpenFileName(this, "Open Project");
+    //QString path = QDir::currentPath() + "/Save.txt";
     if (!path.isEmpty())
     {
        //QMessageBox::information(this, "Info Load", path);
@@ -127,14 +149,21 @@ void SaveLoad::ActionLoadProject() {
     //get the root element
     QDomElement root = document.firstChildElement();
 
-    //List of the Elements(root,tagname,attribute)
-    QList<Shape*> shapeList = ReadXML(root,"Shape");
 
+
+    //List of the Elements(root,tagname,attribute)
+    ReadXML(root,"Shape");
+
+    //Load Scene from XML
+    for (int i = 0; i < shapeList.length();i++)
+    {
+        main_window->hierarchy->OnAddEntityXML(shapeList[i]);
+    }
 }
 
-QList<Shape*> SaveLoad::ReadXML(QDomElement root, QString tagName)
+void SaveLoad::ReadXML(QDomElement root, QString tagName)
 {
-    QList<Shape*> ret;
+
     QDomNodeList items = root.elementsByTagName(tagName);
     qDebug() << "Total items = "<< items.count();
 
@@ -143,11 +172,22 @@ QList<Shape*> SaveLoad::ReadXML(QDomElement root, QString tagName)
         QDomNode itemnode = items.at(i);
         if (itemnode.isElement())
         {
-            Shape new_shape;
+            Shape* new_shape = new Shape();
             QDomElement shapes = itemnode.toElement();
 
-            new_shape.id = shapes.attribute("id").toInt();
-            new_shape.type =(ShapeType)shapes.attribute("Type").toInt();
+            if (shapes.attribute("Type").toInt() == ShapeType::RECTANGLE)
+            {
+                new_shape = (Shape*)new rectangle();
+            }
+            else if (shapes.attribute("Type").toInt() == ShapeType::ELIPSE)
+            {
+                new_shape = (Shape*)new Elipse();
+            }
+
+            new_shape->id = shapes.attribute("id").toInt();
+
+            new_shape->style = (Qt::PenStyle)shapes.attribute("penStyle").toInt();
+            new_shape->stroke_thickness = shapes.attribute("strokeThickness").toInt();
 
             //Get Attributes from Rect
             QDomNodeList rect_items = shapes.elementsByTagName("rect");
@@ -161,11 +201,12 @@ QList<Shape*> SaveLoad::ReadXML(QDomElement root, QString tagName)
                     rect.setRect(
                                 rectelement.attribute("x").toInt(),
                                 rectelement.attribute("y").toInt(),
-                                rectelement.attribute("h").toInt(),
-                                rectelement.attribute("w").toInt());
+                                rectelement.attribute("w").toInt(),
+                                rectelement.attribute("h").toInt());
+
                 }
             }
-            new_shape.rect = rect;
+            new_shape->rect = rect;
 
             //Get Attributes from ColorFill
             QDomNodeList color_fill_items = shapes.elementsByTagName("colorFill");
@@ -182,7 +223,8 @@ QList<Shape*> SaveLoad::ReadXML(QDomElement root, QString tagName)
                                 colorelement.attribute("b").toInt(),
                                 colorelement.attribute("a").toInt());
                 }
-            }
+            }            
+            new_shape->fill_color = colorFill;
 
             //Get Attributes from ColorFill
             QDomNodeList color_stroke_items = shapes.elementsByTagName("colorStroke");
@@ -194,30 +236,28 @@ QList<Shape*> SaveLoad::ReadXML(QDomElement root, QString tagName)
                 {
                     QDomElement colorelement = colorItemNode.toElement();
                     colorStroke.setRgb(
-                                colorelement.attribute("r").toInt(),
-                                colorelement.attribute("g").toInt(),
-                                colorelement.attribute("b").toInt(),
-                                colorelement.attribute("a").toInt());
+                                colorelement.attribute("r").toUInt(),
+                                colorelement.attribute("g").toUInt(),
+                                colorelement.attribute("b").toUInt(),
+                                colorelement.attribute("a").toUInt());
                 }
             }
-            //qDebug() << QString::number(colorStroke.red());
-            //qDebug() << QString::number(colorStroke.green());
-            //qDebug() << QString::number(colorStroke.blue());
-            //qDebug() << QString::number(colorStroke.alpha());
 
-            new_shape.fill_color = colorStroke;
-            ret.push_back(&new_shape);
+            new_shape->stroke_color = colorStroke;
+            shapeList.push_back(new_shape);
         }
-    }
-    return ret;
+
+    }    
 }
 
 void SaveLoad::ActionLoadLayout()
 {
     QSettings settings("Pipo", "Cute Engine");
     main_window->restoreState(settings.value("dockpos").toByteArray());
-
-    qDebug() << this->geometry().width();
+    settings.beginGroup("MainWindow");
+    QRect rect = settings.value("position").toRect();
+    main_window->setGeometry(rect);
+    settings.endGroup();
 
     qDebug("loadLayout");
 }
@@ -226,6 +266,9 @@ void SaveLoad::ActionSaveLayout()
 {
     QSettings settings("Pipo", "Cute Engine");
     settings.setValue("dockpos",main_window->saveState());
+    settings.beginGroup("MainWindow");
+    settings.setValue("position", main_window->geometry());
+    settings.endGroup();
 
     qDebug("saveLayout");
 }

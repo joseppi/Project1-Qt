@@ -1,10 +1,13 @@
 #include "hierarchy.h"
 #include "ui_hierarchy.h"
-#include "shapefactory.h"
 #include "mainwindow.h"
 #include "sceneview.h"
 #include "qinputdialog.h"
 #include "inspector.h"
+
+#include "shapefactory.h"
+#include "shape.h"
+
 
 Hierarchy::Hierarchy(QWidget *parent, MainWindow *main_window) :
     QWidget(parent),
@@ -42,12 +45,37 @@ void Hierarchy::OnAddEntity() {
         new_item->setText("Elipse");
     }
 
-    //qintptr shape_info = (qintptr)new_shape;
-    //QVariant shape_info_variant;
-    //shape_info_variant.setValue(5);
-    //new_item->setData(Qt::UserRole, shape_info_variant);
     new_item->setData(Qt::UserRole, new_shape->id);
 
+    ui->listWidget->addItem(new_item);
+
+    main_window->scene_view->repaint();
+}
+
+void Hierarchy::OnAddEntityXML(Shape *shape)
+{
+    Shape *new_shape = shape;
+    QString item;
+    if (shape->type == ShapeType::RECTANGLE)
+    {
+        item.append("Rectangle");        
+    }
+    else if (shape->type == ShapeType::ELIPSE)
+    {
+        item.append("Elipse");
+    }
+    main_window->shape_factory->CreateShape(new_shape);
+
+    auto *new_item = new QListWidgetItem("NewShape");
+
+    if (item == "Rectangle") {
+        new_item->setText("Rectangle");
+    }
+    else if (item == "Elipse") {
+        new_item->setText("Elipse");
+    }
+
+    new_item->setData(Qt::UserRole, new_shape->id);
 
     ui->listWidget->addItem(new_item);
 
@@ -58,6 +86,13 @@ void Hierarchy::OnRemoveEntity() {
     Shape* shape_to_remove = main_window->inspector->selected_shape;
     ui->listWidget->takeItem(shape_to_remove->id);
     main_window->shape_factory->shapes.removeOne(shape_to_remove);
+    main_window->scene_view->repaint();
+}
+
+void Hierarchy::ClearEntities()
+{
+    ui->listWidget->clear();
+    main_window->shape_factory->shapes.clear();
     main_window->scene_view->repaint();
 }
 

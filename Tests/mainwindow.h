@@ -31,7 +31,7 @@ public:
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    Shape* AddShape(ShapeType type);
+    Shape* AddShape(ShapeType type);    
     void keyPressEvent(QKeyEvent *event);
     QList<Shape*> ReadXML(QDomElement root, QString tagName);
 
@@ -41,13 +41,13 @@ public slots:
     void ActionNewProject();
 
 public:
-    Hierarchy *hierarchy;
-    Inspector *inspector;
-    SceneView *scene_view;
-    SaveLoad *save_load;
+    Hierarchy *hierarchy = nullptr;
+    Inspector *inspector = nullptr;
+    SceneView *scene_view = nullptr;
+    SaveLoad *save_load = nullptr;
 
 public:
-    Ui::MainWindow *ui_main;
+    Ui::MainWindow *ui_main = nullptr;
 
 
 

@@ -4,7 +4,9 @@
 #include <QWidget>
 #include <QListWidget>
 
+
 class MainWindow;
+class Shape;
 
 namespace Ui {
 class Hierarchy;
@@ -17,11 +19,13 @@ class Hierarchy : public QWidget
 
 public:
     explicit Hierarchy(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
+    void OnAddEntityXML(Shape* shape);
     ~Hierarchy();
 
 public slots:
-    void OnAddEntity();
-    void OnRemoveEntity();
+    void OnAddEntity();    
+    void OnRemoveEntity();    
+    void ClearEntities();
     QList<QListWidgetItem*> GetListViewEntities();
 
 public:

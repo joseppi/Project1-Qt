@@ -67,16 +67,16 @@ void MainWindow::ActionQuitProject() {
 
 void MainWindow::ActionNewProject(){
 
-    QString path = QFileDialog::getOpenFileName(this, "New Project");
-    if (!path.isEmpty())
-    {
-       QMessageBox::information(this, "Info Load", path);
-    }
+    this->hierarchy->ClearEntities();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui_main;
+    delete hierarchy;
+    delete inspector;
+    delete scene_view;
+    delete save_load;
 }
 
 Shape* MainWindow::AddShape(ShapeType type)

@@ -1,0 +1,22 @@
+<Entities>
+ <Shape id="0" Type="1" strokeThickness="1" penStyle="1">
+  <rect w="701" x="0" h="100" y="623"/>
+  <colorFill a="255" g="170" r="170" b="127"/>
+  <colorStroke a="255" g="0" r="0" b="0"/>
+ </Shape>
+ <Shape id="1" Type="2" strokeThickness="7" penStyle="1">
+  <rect w="185" x="138" h="158" y="329"/>
+  <colorFill a="255" g="170" r="0" b="0"/>
+  <colorStroke a="255" g="85" r="0" b="0"/>
+ </Shape>
+ <Shape id="2" Type="1" strokeThickness="2" penStyle="1">
+  <rect w="40" x="213" h="163" y="488"/>
+  <colorFill a="255" g="85" r="170" b="0"/>
+  <colorStroke a="255" g="0" r="0" b="0"/>
+ </Shape>
+ <Shape id="3" Type="1" strokeThickness="0" penStyle="2">
+  <rect w="303" x="402" h="284" y="339"/>
+  <colorFill a="255" g="255" r="255" b="255"/>
+  <colorStroke a="255" g="0" r="0" b="0"/>
+ </Shape>
+</Entities>

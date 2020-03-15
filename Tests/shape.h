@@ -20,7 +20,7 @@ enum ShapeType {
 class Shape
 {
 public:
-    Shape();
+    Shape();    
     virtual void Draw(QPainter &painter, QBrush &brush, QPen &pen,const QRect &scene_rect);
 
 public:

@@ -5,7 +5,7 @@
 #include <QtWidgets>
 #include <QMainWindow>
 
-#include "shapefactory.h"
+#include "shape.h"
 
 class MainWindow;
 
@@ -18,13 +18,17 @@ public:
 
 public:
     explicit SaveLoad(QWidget *parent, MainWindow* main_window);
-    QList<Shape*> ReadXML(QDomElement root, QString tagName);
+    void ReadXML(QDomElement root, QString tagName);
+    void ClearScene();
 
 public slots:
     void ActionSaveProject();
     void ActionLoadProject();
     void ActionLoadLayout();
     void ActionSaveLayout();
+
+private:
+    QList<Shape*> shapeList;
 
 
 };

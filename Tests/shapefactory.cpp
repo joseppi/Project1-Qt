@@ -24,9 +24,17 @@ Shape* ShapeFactory::CreateShape(ShapeType type)
     }
     new_shape->id = shapes.length();
 
-    shapes.append(new_shape);
+    shapes.append(new_shape);    
     return new_shape;
 }
+
+void ShapeFactory::CreateShape(Shape* shape)
+{
+    Shape* new_shape = shape;
+
+    shapes.append(new_shape);
+}
+
 
 void ShapeFactory::DrawShapeList(QPainter &painter, QBrush &brush, QPen &pen,const QRect &scene_rect)
 {
