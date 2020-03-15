@@ -43,4 +43,21 @@ By Pol Ferrando and Josep Pi
 
 ![save_load](save_load.gif)
 
+## List of Qt Features
+**Connect/Signals/Slots** for connecting Objects. (Specifically widgets from .ui to methods from .cpp
+
+**QMessageBox** for displaying infromation when clicking a button.
+
+**QPainter** for rendering shapes
+
+**QColorDialog** for displaying different colors
+
+**CustomWidgets** for creating our own panels inside the application
+
+**QtXML** for saving and loading scenes
+
+**QSettings** for storing the window position and layout of the application
+
+
+
 
