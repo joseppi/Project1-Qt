@@ -6,7 +6,7 @@
 #include <QKeyEvent>
 #include <QtXml>
 #include <QSettings>
-
+#include "shape.h"
 
 class Shape;
 
@@ -30,7 +30,7 @@ public:
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    Shape* AddShape();
+    Shape* AddShape(ShapeType type);
     void keyPressEvent(QKeyEvent *event);
     QList<Shape*> ListElements(QDomElement root, QString tagName);
 

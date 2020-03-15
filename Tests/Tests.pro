@@ -26,6 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        elipse.cpp \
         hierarchy.cpp \
         inspector.cpp \
         main.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
         shapefactory.cpp
 
 HEADERS += \
+        elipse.h \
         hierarchy.h \
         inspector.h \
         mainwindow.h \

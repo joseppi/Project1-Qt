@@ -3,6 +3,7 @@
 #include "shapefactory.h"
 #include "mainwindow.h"
 #include "sceneview.h"
+#include "qinputdialog.h"
 Hierarchy::Hierarchy(QWidget *parent, MainWindow *main_window) :
     QWidget(parent),
     ui(new Ui::Hierarchy)
@@ -18,10 +19,25 @@ Hierarchy::~Hierarchy()
 }
 
 void Hierarchy::OnAddEntity() {
-    Shape* new_shape = main_window->AddShape();
 
 
-    auto *new_item = new QListWidgetItem("NewShape");
+    QStringList items;
+    items << tr("Rectangle") << tr("Elipse");
+
+    bool ok;
+    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
+                                         tr("Shape type:"), items, 0, false, &ok);
+
+     auto *new_item = new QListWidgetItem("NewShape");
+    Shape* new_shape = nullptr;
+    if (item == "Rectangle") {
+        new_shape = main_window->AddShape(ShapeType::RECTANGLE);
+        new_item->setText("Rectangle");
+    }
+    else if (item == "Elipse") {
+        new_shape = main_window->AddShape(ShapeType::ELIPSE);
+        new_item->setText("Elipse");
+    }
 
     //qintptr shape_info = (qintptr)new_shape;
     //QVariant shape_info_variant;

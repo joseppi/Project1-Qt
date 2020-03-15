@@ -11,9 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,24 +24,48 @@ class Ui_Properties
 {
 public:
     QFormLayout *formLayout;
-    QLabel *label_2;
-    QPushButton *FillColorSample;
     QLabel *label_3;
     QPushButton *StrokeColorSample;
     QLabel *label;
+    QLabel *label_2;
+    QPushButton *FillColorSample;
+    QLabel *label_4;
+    QSpinBox *StrokeWidth;
+    QLabel *label_5;
+    QComboBox *StyleSelect;
 
     void setupUi(QWidget *Properties)
     {
         if (Properties->objectName().isEmpty())
             Properties->setObjectName(QString::fromUtf8("Properties"));
-        Properties->resize(400, 161);
+        Properties->resize(400, 170);
         Properties->setMinimumSize(QSize(100, 100));
         formLayout = new QFormLayout(Properties);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        label_3 = new QLabel(Properties);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        formLayout->setWidget(8, QFormLayout::LabelRole, label_3);
+
+        StrokeColorSample = new QPushButton(Properties);
+        StrokeColorSample->setObjectName(QString::fromUtf8("StrokeColorSample"));
+
+        formLayout->setWidget(8, QFormLayout::FieldRole, StrokeColorSample);
+
+        label = new QLabel(Properties);
+        label->setObjectName(QString::fromUtf8("label"));
+        QFont font;
+        font.setPointSize(13);
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, label);
+
         label_2 = new QLabel(Properties);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
+        formLayout->setWidget(7, QFormLayout::LabelRole, label_2);
 
         FillColorSample = new QPushButton(Properties);
         FillColorSample->setObjectName(QString::fromUtf8("FillColorSample"));
@@ -120,27 +146,27 @@ public:
 #endif
         FillColorSample->setPalette(palette);
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, FillColorSample);
+        formLayout->setWidget(7, QFormLayout::FieldRole, FillColorSample);
 
-        label_3 = new QLabel(Properties);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_4 = new QLabel(Properties);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        formLayout->setWidget(2, QFormLayout::LabelRole, label_3);
+        formLayout->setWidget(6, QFormLayout::LabelRole, label_4);
 
-        StrokeColorSample = new QPushButton(Properties);
-        StrokeColorSample->setObjectName(QString::fromUtf8("StrokeColorSample"));
+        StrokeWidth = new QSpinBox(Properties);
+        StrokeWidth->setObjectName(QString::fromUtf8("StrokeWidth"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, StrokeColorSample);
+        formLayout->setWidget(6, QFormLayout::FieldRole, StrokeWidth);
 
-        label = new QLabel(Properties);
-        label->setObjectName(QString::fromUtf8("label"));
-        QFont font;
-        font.setPointSize(13);
-        font.setBold(true);
-        font.setWeight(75);
-        label->setFont(font);
+        label_5 = new QLabel(Properties);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, label);
+        formLayout->setWidget(5, QFormLayout::LabelRole, label_5);
+
+        StyleSelect = new QComboBox(Properties);
+        StyleSelect->setObjectName(QString::fromUtf8("StyleSelect"));
+
+        formLayout->setWidget(5, QFormLayout::FieldRole, StyleSelect);
 
 
         retranslateUi(Properties);
@@ -151,11 +177,14 @@ public:
     void retranslateUi(QWidget *Properties)
     {
         Properties->setWindowTitle(QApplication::translate("Properties", "Form", nullptr));
-        label_2->setText(QApplication::translate("Properties", "Fill Color:", nullptr));
-        FillColorSample->setText(QString());
         label_3->setText(QApplication::translate("Properties", "StroKe Color:", nullptr));
         StrokeColorSample->setText(QString());
         label->setText(QApplication::translate("Properties", "Properties", nullptr));
+        label_2->setText(QApplication::translate("Properties", "Fill Color:", nullptr));
+        FillColorSample->setText(QString());
+        label_4->setText(QApplication::translate("Properties", "Stroke Thickness", nullptr));
+        label_5->setText(QApplication::translate("Properties", "Stroke Style:", nullptr));
+        StyleSelect->setCurrentText(QString());
     } // retranslateUi
 
 };

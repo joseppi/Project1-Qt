@@ -226,9 +226,9 @@ MainWindow::~MainWindow()
     delete ui_main;
 }
 
-Shape* MainWindow::AddShape()
+Shape* MainWindow::AddShape(ShapeType type)
 {
-    return shape_factory->CreateShape(RECTANGLE);
+    return shape_factory->CreateShape(type);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)

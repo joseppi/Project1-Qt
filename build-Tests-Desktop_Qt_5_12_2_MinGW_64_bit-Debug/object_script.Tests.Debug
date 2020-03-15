@@ -1,3 +1,4 @@
+debug/elipse.o
 debug/hierarchy.o
 debug/inspector.o
 debug/main.o

@@ -1,13 +1,13 @@
-#include "rectangle.h"
+#include "elipse.h"
 #include <qpainter.h>
 #include <qrect.h>
-rectangle::rectangle() : Shape()
+
+Elipse::Elipse()
 {
-    this->type = ShapeType::RECTANGLE;
+    this->type = ShapeType::ELIPSE;
 }
 
-void rectangle::Draw(QPainter &painter, QBrush &brush, QPen &pen,const  QRect &scene_rect)
-
+void Elipse::Draw(QPainter &painter, QBrush &brush, QPen &pen, const QRect &scene_rect)
 {
     brush.setColor(fill_color);
     pen.setWidth(stroke_thickness);
@@ -16,5 +16,5 @@ void rectangle::Draw(QPainter &painter, QBrush &brush, QPen &pen,const  QRect &s
     painter.setBrush(brush);
     painter.setPen(pen);
 
-    painter.drawRect(rect);
+    painter.drawEllipse(rect);
 }

@@ -28,6 +28,8 @@ public:
     ShapeType type;
     QColor fill_color;
     QColor stroke_color;
+    Qt::PenStyle style;
+    int stroke_thickness;
     int id;
 
 };

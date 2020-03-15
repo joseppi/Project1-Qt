@@ -1,6 +1,7 @@
 #include "shapefactory.h"
 #include "shape.h"
 #include "rectangle.h"
+#include "elipse.h"
 #include <QPainter>
 
 ShapeFactory::ShapeFactory()
@@ -13,15 +14,18 @@ Shape* ShapeFactory::CreateShape(ShapeType type)
     Shape* new_shape = nullptr;
 
     switch (type) {
-        case ShapeType::RECTANGLE:
-            new_shape = (Shape*)new rectangle();
+    case ShapeType::RECTANGLE:
+        new_shape = (Shape*)new rectangle();
+        break;
+    case ShapeType::ELIPSE:
+        new_shape = (Shape*)new Elipse();
         break;
 
     }
-   new_shape->id = shapes.length();
+    new_shape->id = shapes.length();
 
-   shapes.append(new_shape);
-   return new_shape;
+    shapes.append(new_shape);
+    return new_shape;
 }
 
 void ShapeFactory::DrawShapeList(QPainter &painter, QBrush &brush, QPen &pen,const QRect &scene_rect)

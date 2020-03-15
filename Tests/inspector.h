@@ -26,6 +26,9 @@ public:
 private:
     Ui::Properties *ui_properties;
     Ui::Transform *ui_transorm;
+    MainWindow* main_window;
+    Shape* selected_shape;
+
 
 
 public slots:
@@ -36,11 +39,12 @@ public slots:
     void OnHeightChanged(double v);
     void ChangeFillColor();
     void ChangeStrokeColor();
-    void UpdateColorSample(QPushButton& color_sample,  QColor color);
+    void ChangeStrokeSize(int v);
+    void ChangeLineStyle(int index);
 
 private:
-    MainWindow* main_window;
-    Shape* selected_shape;
+    void UpdateColorSample(QPushButton& color_sample,  QColor color);
+
 
 };
 
