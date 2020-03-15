@@ -153,42 +153,44 @@ void Inspector::OnCurrentItemChanged()
 
     QListWidgetItem* item = main_window->hierarchy->ui->listWidget->currentItem();
 
-    //QVariant shape_info_variant = item->data(Qt::UserRole);
-    QVariant qid = item->data(Qt::UserRole);
-    int id = qid.toInt();
-    selected_shape = main_window->shape_factory->shapes.at(id);
-    //qintptr shape_pointer_as_int = shape_info_variant.toInt();
-    //Shape* newest_shape = (Shape*)shape_pointer_as_int;
-    ui_transorm->ScalX->setValue(selected_shape->rect.width());
-    ui_transorm->ScalY->setValue(selected_shape->rect.height());
-    ui_transorm->PosX->setValue(selected_shape->rect.x());
-    ui_transorm->PosY->setValue(selected_shape->rect.y());
+    if (item) {
+        //QVariant shape_info_variant = item->data(Qt::UserRole);
+        QVariant qid = item->data(Qt::UserRole);
+        int id = qid.toInt();
+        selected_shape = main_window->shape_factory->shapes.at(id);
+        //qintptr shape_pointer_as_int = shape_info_variant.toInt();
+        //Shape* newest_shape = (Shape*)shape_pointer_as_int;
+        ui_transorm->ScalX->setValue(selected_shape->rect.width());
+        ui_transorm->ScalY->setValue(selected_shape->rect.height());
+        ui_transorm->PosX->setValue(selected_shape->rect.x());
+        ui_transorm->PosY->setValue(selected_shape->rect.y());
 
 
-    ui_properties->StrokeWidth->setValue(selected_shape->stroke_thickness);
+        ui_properties->StrokeWidth->setValue(selected_shape->stroke_thickness);
 
-    UpdateColorSample(*ui_properties->FillColorSample,selected_shape->fill_color);
-    UpdateColorSample(*ui_properties->StrokeColorSample,selected_shape->stroke_color);
+        UpdateColorSample(*ui_properties->FillColorSample,selected_shape->fill_color);
+        UpdateColorSample(*ui_properties->StrokeColorSample,selected_shape->stroke_color);
 
 
-    int new_index = 0;
-    switch (selected_shape->style) {
-    case Qt::PenStyle::SolidLine:
-        new_index = 0;
-        break;
-    case Qt::PenStyle::DashLine:
-        new_index = 1;
-        break;
-    case Qt::PenStyle::DotLine:
-        new_index = 2;
-        break;
-        new_index = 3;
-        break;
-    case Qt::PenStyle::NoPen:
-        new_index = 4;
-        break;
+        int new_index = 0;
+        switch (selected_shape->style) {
+        case Qt::PenStyle::SolidLine:
+            new_index = 0;
+            break;
+        case Qt::PenStyle::DashLine:
+            new_index = 1;
+            break;
+        case Qt::PenStyle::DotLine:
+            new_index = 2;
+            break;
+            new_index = 3;
+            break;
+        case Qt::PenStyle::NoPen:
+            new_index = 4;
+            break;
+        }
+        ui_properties->StyleSelect->setCurrentIndex(new_index);
     }
-    ui_properties->StyleSelect->setCurrentIndex(new_index);
 
 }
 

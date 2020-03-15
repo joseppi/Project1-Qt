@@ -22,7 +22,6 @@ public:
 public slots:
     void OnAddEntity();
     void OnRemoveEntity();
-    void OnEntitySelected();
     QList<QListWidgetItem*> GetListViewEntities();
 
 public:

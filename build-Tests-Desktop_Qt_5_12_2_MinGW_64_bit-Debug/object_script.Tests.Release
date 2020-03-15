@@ -4,6 +4,7 @@ release/inspector.o
 release/main.o
 release/mainwindow.o
 release/rectangle.o
+release/saveload.o
 release/sceneview.o
 release/shape.o
 release/shapefactory.o
@@ -11,4 +12,5 @@ release/qrc_icons.o
 release/moc_hierarchy.o
 release/moc_inspector.o
 release/moc_mainwindow.o
+release/moc_saveload.o
 release/moc_sceneview.o

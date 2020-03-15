@@ -4,6 +4,8 @@
 #include "mainwindow.h"
 #include "sceneview.h"
 #include "qinputdialog.h"
+#include "inspector.h"
+
 Hierarchy::Hierarchy(QWidget *parent, MainWindow *main_window) :
     QWidget(parent),
     ui(new Ui::Hierarchy)
@@ -11,6 +13,7 @@ Hierarchy::Hierarchy(QWidget *parent, MainWindow *main_window) :
     this->main_window = main_window;
     ui->setupUi(this);
     connect(ui->AddEntityBtn,SIGNAL(clicked()),SLOT(OnAddEntity()));
+    connect(ui->RemoveEntityBtn,SIGNAL(clicked()),SLOT(OnRemoveEntity()));
 }
 
 Hierarchy::~Hierarchy()
@@ -52,12 +55,10 @@ void Hierarchy::OnAddEntity() {
 }
 
 void Hierarchy::OnRemoveEntity() {
-    int row = ui->listWidget->currentRow();
-    ui->listWidget->takeItem(row);
-}
-
-void Hierarchy::OnEntitySelected() {
-
+    Shape* shape_to_remove = main_window->inspector->selected_shape;
+    ui->listWidget->takeItem(shape_to_remove->id);
+    main_window->shape_factory->shapes.removeOne(shape_to_remove);
+    main_window->scene_view->repaint();
 }
 
 QList<QListWidgetItem*> Hierarchy::GetListViewEntities()

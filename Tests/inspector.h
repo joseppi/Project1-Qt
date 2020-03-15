@@ -27,7 +27,9 @@ private:
     Ui::Properties *ui_properties;
     Ui::Transform *ui_transorm;
     MainWindow* main_window;
-    Shape* selected_shape;
+
+public:
+        Shape* selected_shape;
 
 
 
