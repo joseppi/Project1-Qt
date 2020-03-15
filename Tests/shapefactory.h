@@ -19,6 +19,7 @@ public:
     ShapeFactory();
     Shape* CreateShape(ShapeType type);
     void DrawShapeList(QPainter &painter, QBrush &brush, QPen &pen,const QRect &scene_rect);
+    QList<Shape*> GetShapes();
 };
 
 #endif // SHAPEFACTORY_H

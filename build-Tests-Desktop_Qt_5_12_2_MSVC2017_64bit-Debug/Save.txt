@@ -1,7 +1,12 @@
 <Entities>
- <Shape Type="1" id="0">
-  <rect w="100" h="100" x="0" y="0"/>
-  <colorFill b="255" r="255" g="255" a="255"/>
-  <colorStroke b="0" r="0" g="0" a="255"/>
+ <Shape id="0" Type="1">
+  <rect y="0" w="100" x="0" h="100"/>
+  <colorFill a="255" b="255" g="255" r="255"/>
+  <colorStroke a="255" b="0" g="0" r="0"/>
+ </Shape>
+ <Shape id="1" Type="1">
+  <rect y="0" w="100" x="0" h="100"/>
+  <colorFill a="255" b="255" g="255" r="255"/>
+  <colorStroke a="255" b="0" g="0" r="0"/>
  </Shape>
 </Entities>

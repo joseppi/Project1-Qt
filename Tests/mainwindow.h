@@ -19,6 +19,7 @@ class Hierarchy;
 class Inspector;
 class SceneView;
 class ShapeFactory;
+class SaveLoad;
 
 class MainWindow : public QMainWindow
 {
@@ -37,18 +38,15 @@ public:
 
 public slots:
     void ActionQuitProject();
-    void ActionLoadProject();
-    void ActionSaveProject();
     void ActionNewProject();
-    void ActionLoadLayout();
-    void ActionSaveLayout();
 
 public:
     Hierarchy *hierarchy;
     Inspector *inspector;
     SceneView *scene_view;
+    SaveLoad *save_load;
 
-private:
+public:
     Ui::MainWindow *ui_main;
 
 

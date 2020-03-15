@@ -50,5 +50,12 @@ void ShapeFactory::DrawShapeList(QPainter &painter, QBrush &brush, QPen &pen,con
 //    int x = scene_rect.width() /2 - r;
 //    int y = scene_rect.height() /2 - r;
 //    QRect circleRect(x,y,w,h);
-//    painter.drawEllipse(circleRect);
+    //    painter.drawEllipse(circleRect);
+}
+
+QList<Shape *> ShapeFactory::GetShapes()
+{
+    QList<Shape*> ret;
+    ret = shapes;
+    return ret;
 }
