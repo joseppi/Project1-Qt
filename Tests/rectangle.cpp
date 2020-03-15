@@ -12,9 +12,9 @@ void rectangle::Draw(QPainter &painter, QBrush &brush, QPen &pen,const  QRect &s
     QColor whiteColor = QColor::fromRgb(255,255,255);
     QColor blackColor = QColor::fromRgb(0,0,0);
 
-        brush.setColor(whiteColor);
+        brush.setColor(fill_color);
         pen.setWidth(4);
-        pen.setColor(blackColor);
+        pen.setColor(stroke_color);
         pen.setStyle(Qt::PenStyle::DashLine);
         painter.setBrush(brush);
         painter.setPen(pen);

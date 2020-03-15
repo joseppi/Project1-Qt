@@ -9,7 +9,6 @@ SceneView::SceneView(QWidget *parent, MainWindow* main_window) : QWidget(parent)
 {
     this->main_window = main_window;
 
-    connect(this->main_window->hierarchy->ui->AddEntityBtn,SIGNAL(clicked()),SLOT(OnAddEntity()));
 }
 
 void SceneView::DrawBigCircle()
@@ -54,8 +53,6 @@ void SceneView::DrawScene()
     //must be called in paintevent
     QPainter painter(this);
     QColor blueColor = QColor::fromRgb(127,190,220);
-    QColor whiteColor = QColor::fromRgb(255,255,255);
-    QColor blackColor = QColor::fromRgb(0,0,0);
     QBrush brush;
     QPen pen;
 

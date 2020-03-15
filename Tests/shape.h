@@ -26,6 +26,8 @@ public:
 public:
     QRect rect;
     ShapeType type;
+    QColor fill_color;
+    QColor stroke_color;
     int id;
 
 };

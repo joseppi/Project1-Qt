@@ -1,0 +1,13 @@
+debug/hierarchy.o
+debug/inspector.o
+debug/main.o
+debug/mainwindow.o
+debug/rectangle.o
+debug/sceneview.o
+debug/shape.o
+debug/shapefactory.o
+debug/qrc_icons.o
+debug/moc_hierarchy.o
+debug/moc_inspector.o
+debug/moc_mainwindow.o
+debug/moc_sceneview.o

@@ -47,6 +47,7 @@ HEADERS += \
 FORMS += \
         hierarchy.ui \
         mainwindow.ui \
+        properties.ui \
         transform.ui
 
 # Default rules for deployment.
