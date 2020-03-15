@@ -1,6 +1,12 @@
 <Entities>
- <Shape id="0" w="100" h="100" y="0" Type="1" x="0"/>
- <Shape id="1" w="100" h="100" y="0" Type="1" x="0"/>
- <Shape id="2" w="100" h="100" y="0" Type="1" x="0"/>
- <Shape id="3" w="100" h="100" y="0" Type="1" x="0"/>
+ <Shape id="0" Type="1">
+  <rect y="0" w="100" x="0" h="100"/>
+  <colorFill a="255" b="255" g="255" r="255"/>
+  <colorStroke a="255" b="0" g="0" r="0"/>
+ </Shape>
+ <Shape id="1" Type="1">
+  <rect y="0" w="100" x="0" h="100"/>
+  <colorFill a="255" b="255" g="255" r="255"/>
+  <colorStroke a="255" b="0" g="0" r="0"/>
+ </Shape>
 </Entities>

@@ -32,6 +32,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         rectangle.cpp \
+        saveload.cpp \
         sceneview.cpp \
         shape.cpp \
         shapefactory.cpp
@@ -42,6 +43,7 @@ HEADERS += \
         inspector.h \
         mainwindow.h \
         rectangle.h \
+        saveload.h \
         sceneview.h \
         shape.h \
         shapefactory.h
